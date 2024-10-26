@@ -69,6 +69,7 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
         // ...
         'verify.printer.token' => \App\Http\Middleware\VerifyPrinterToken::class,
+        'admin' => \App\Http\Middleware\CheckAdmin::class,
     ];
     protected function schedule(Schedule $schedule)
     {$schedule->command('daily:tasks')->daily();}
